@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Carrinho from './componentes/Carrinho'
+import Filter from './Components/Filter';
 import styled from 'styled-components'
 
 const DivApp = styled.div`
@@ -71,7 +72,7 @@ class App extends React.Component {
     return (
       <DivApp>
         
-        <div></div>
+        <Filter/>
         <div></div>
         <Carrinho 
           itemsNoCarrinho = {this.state.itemsNoCarrinho}
@@ -82,3 +83,4 @@ class App extends React.Component {
   }
 }
 export default App;
+
