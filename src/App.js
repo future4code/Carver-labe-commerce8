@@ -4,11 +4,28 @@ import Carrinho from './componentes/Carrinho'
 import Filter from './Components/Filter';
 import styled from 'styled-components'
 
+const DivHeader = styled.div`
+  width:100%;
+  height:20vh;
+  border-bottom:5vh solid #E5E5E5;
+  background-color:#C4C4C4;
+`
+
+const DivFooter = styled.div`
+  width:100%;
+  height:15vh;
+  background-color: #C4C4C4;
+`
+
 const DivApp = styled.div`
+  display:flex;
+  flex-direction: column;
+`
+
+const DivCorpo = styled.div`
   display:grid;
   grid-template-columns: 1fr 3fr 1fr;
-  padding: 15px;
-  gap: 8px;
+  height:60vh;
 `
 
 const viagens = [
@@ -71,13 +88,16 @@ class App extends React.Component {
   render() {
     return (
       <DivApp>
-        
-        <Filter/>
-        <div></div>
-        <Carrinho 
-          itemsNoCarrinho = {this.state.itemsNoCarrinho}
-          removendoProduto = {this.removendoProduto}
-        />
+        <DivHeader></DivHeader>
+        <DivCorpo>
+          <Filter/>
+          <div></div>
+          <Carrinho 
+            itemsNoCarrinho = {this.state.itemsNoCarrinho}
+            removendoProduto = {this.removendoProduto}
+          />
+        </DivCorpo>
+        <DivFooter></DivFooter>
       </DivApp>
     );
   }
