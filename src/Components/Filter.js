@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const DivFiltro = styled.div`
 
-border:1px solid black;
-padding:10px;
-
+border-right:1px solid black;
+padding-top:10px;
+padding-left:30px;
+background-color:#B77878;
 `
 const DivFiltro2 = styled.div`
 
@@ -49,7 +50,7 @@ export default class Filter extends React.Component {
       return (
         <DivFiltro>
 
-          <h2>Filtros</h2>
+          <h1>Filtros:</h1>
           
                  
           

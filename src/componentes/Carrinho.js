@@ -5,8 +5,10 @@ import CarrinhoItems from './CarrinhoItems'
 const DivCarrinho = styled.div`
   display:flex;
   flex-direction: column;
-  padding: 10px;
-  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 30px;
+  border-left: 1px solid black;
+  background-color:#B77878;
 `
 
 class Carrinho extends React.Component {
