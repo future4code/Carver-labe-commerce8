@@ -17,10 +17,10 @@ const ItemContainer = styled.div`
 class CarrinhoItems extends React.Component {
   render() {
     return <ItemContainer>
-      <p>{this.props.item.quantidade}x</p>
-      <p>{this.props.item.nome}</p>
+      <p>{this.props.produto.quantidade}x</p>
+      <p>{this.props.produto.nome}</p>
       <button 
-        onClick={() => this.props.removendoProduto(this.props.item.id)}
+        onClick={() => this.props.removendoProduto(this.props.produto.id)}
       >Remover
       </button>
     </ItemContainer>
