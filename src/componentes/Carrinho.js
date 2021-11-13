@@ -11,6 +11,10 @@ const DivCarrinho = styled.div`
   background-color:#B77878;
 `
 
+const NovoBotao = styled.button`
+  width:200px;
+`
+
 class Carrinho extends React.Component {
     state = {
       produtos:[],
@@ -21,23 +25,36 @@ class Carrinho extends React.Component {
       let valorTotal = 0
 
       for (let item of this.props.itemsNoCarrinho){
-        valorTotal += item.value * item.quantidade
+        valorTotal += item.valor * item.quantidade
       }
       return valorTotal
     }
-  
+
+    FiltrandoCarrinho = () => {
+      const carrinhoFiltrado = []
+      for(let item of this.props.itemsNoCarrinho){
+        if(item.quantidade > 0){
+          carrinhoFiltrado.push(item)
+        }
+      }
+      return carrinhoFiltrado
+    }
+
     render() {
       return <DivCarrinho>
         <h1>Carrinho:</h1>
         <div>
-          {this.props.itemsNoCarrinho.map((planeta) => {
-            return <CarrinhoItems
-            item = {planeta}
-            removendoProduto = {this.props.removendoProduto}
-            />
-          })}
+          {this.FiltrandoCarrinho().map((planeta) => {
+              return <CarrinhoItems
+              produto = {planeta}
+              removendoProduto = {this.props.removendoProduto}
+              />
+          })
+          }
+
         </div>
         <p>Valor total: R$<b>{this.DefinindoValorTotal()}</b></p>
+        <NovoBotao onClick={this.props.finalizandoCompra}>Finalizar Compra</NovoBotao>
       </DivCarrinho>
     }
   }
